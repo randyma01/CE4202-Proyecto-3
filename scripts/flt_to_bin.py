@@ -3,6 +3,13 @@ def decimal_converter(num):
     return oper
 
 
+def complete_bits(str_num):
+    temp = str_num
+    for x in range(15-(len(str_num)-1)):
+        temp = "0"+temp
+    return temp
+
+
 # Abre el file para leer los contenidos
 lines = []
 with open("/home/kvn_95/Documents/TEC/CE4202-Proyecto-3/analogica/multisim/analog_data.txt") as file:
@@ -25,10 +32,11 @@ for line in lines:
         result = "0."
     else:
         result = str(bin(whole).lstrip("0b"))+"."
+    result = complete_bits(result)
     # para la parte fraccionaria
     d_number = dec_number
     dec_res = ""
-    for x in range(20):
+    for x in range(16):
         temp_dec = "0." + d_number
         temp_dec = float(temp_dec)
         w_number, d_number = str(decimal_converter(temp_dec)).split(".")
@@ -40,5 +48,6 @@ for line in lines:
         result += dec_res[::-1]
     f = open("/home/kvn_95/Documents/TEC/CE4202-Proyecto-3/data/binary_data.txt", "a")
     f.write(result + "\n")
+print("Success!!! Binary data file generated.")
 file.close()
 f.close()
