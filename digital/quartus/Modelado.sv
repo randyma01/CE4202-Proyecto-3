@@ -11,6 +11,10 @@ logic w0 = 32'd10;
 
 int cont = 0;
 
+SumaPF sumapf (x[31], x[30:16], x[15:0],x[31], x[30:16], x[15:0])
+
+
+
 
 
 
