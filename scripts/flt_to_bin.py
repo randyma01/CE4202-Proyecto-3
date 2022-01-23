@@ -29,9 +29,10 @@ for line in lines:
     whole = int(whole_number)
     result = ""
     if(whole == 0):
-        result = "0."
+        result = "0"
     else:
-        result = str(bin(whole).lstrip("0b"))+"."
+        result = str(bin(whole).lstrip("0b"))
+    #Completamos con la cantidad de bits necesarios
     result = complete_bits(result)
     # para la parte fraccionaria
     d_number = dec_number
@@ -46,6 +47,7 @@ for line in lines:
         result += dec_res
     else:
         result += dec_res[::-1]
+    #Escribimos en el nuevo file
     f = open("/home/kvn_95/Documents/TEC/CE4202-Proyecto-3/data/binary_data.txt", "a")
     f.write(result + "\n")
 print("Success!!! Binary data file generated.")
