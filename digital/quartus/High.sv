@@ -1,9 +1,9 @@
 module High (
-    input logic [14:0] a,
-	 input logic [14:0] c,
-	 output logic [31:0] result
+    input logic [15:0] a,
+	 input logic [15:0] c,
+	 output logic [63:0] result
 );
 
-assign result = (a*c)<<8;
+assign result = {(a*c),16'b0}<<16;
     
 endmodule
