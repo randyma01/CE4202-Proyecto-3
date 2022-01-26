@@ -2,7 +2,7 @@ module Modelado_tb();
 
 logic [31:0] x;
 logic [31:0] y;
-logic [31:0] result = 32'd0;
+logic [31:0] w = 32'd0;
 
 logic [31:0] cnt;
 logic fp_r;
@@ -13,7 +13,7 @@ reg [31:0] lectura [0:399];
 logic [31:0] dato;
 integer i;
 
-Modelado modelado (x, y, result);
+Modelado modelado (x, y, w);
 
 initial
 begin

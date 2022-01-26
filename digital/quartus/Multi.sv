@@ -1,6 +1,8 @@
 module Multi (
-	input logic [31:0] A,
-	input logic [31:0] B,
+	input logic [15:0] a,
+	input logic [15:0] b,
+	input logic [15:0] c,
+	input logic [15:0] d,
 	output logic [63:0] resultH,
 	output logic [63:0] resultM,
 	output logic [63:0] resultL,
@@ -10,10 +12,7 @@ module Multi (
 	output logic [15:0] resultF
 );
 
-logic [15:0] a = A[31:16];
-logic [15:0] b = A[15:0];
-logic [15:0] c = B[31:16];
-logic [15:0] d = B[15:0];
+
 
 High h (a, c, resultH);
 
